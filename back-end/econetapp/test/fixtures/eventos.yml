@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyText
+  id_humedal: 
+  url_imagen: 
+  organizador: 
+  horario: 
+  id_contacto: 
+
+two:
+  descripcion: MyText
+  id_humedal: 
+  url_imagen: 
+  organizador: 
+  horario: 
+  id_contacto: 

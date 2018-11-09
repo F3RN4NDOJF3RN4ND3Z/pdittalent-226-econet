@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: 
+  direccion: 
+  ubicacion: 
+  descripcion: 
+  horario_atencion: 
+  id_contacto: 
+
+two:
+  nombre: 
+  direccion: 
+  ubicacion: 
+  descripcion: 
+  horario_atencion: 
+  id_contacto: 

@@ -1,0 +1,2 @@
+class Humedal < ApplicationRecord
+end
