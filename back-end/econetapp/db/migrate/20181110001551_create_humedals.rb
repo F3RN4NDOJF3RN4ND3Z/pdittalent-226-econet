@@ -6,7 +6,7 @@ class CreateHumedals < ActiveRecord::Migration[5.2]
       t.String :ubicacion
       t.Text :descripcion
       t.String :horario_atencion
-      t.Integer :id_contacto
+      t.references :contacto, foreign_key: true
 
       t.timestamps
     end

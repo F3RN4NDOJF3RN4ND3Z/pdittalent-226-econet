@@ -6,7 +6,8 @@ class CreateEventos < ActiveRecord::Migration[5.2]
       t.String :url_imagen
       t.String :organizador
       t.String :horario
-      t.Integer :id_contacto
+      t.references :contacto, foreign_key: true
+      t.references :humedal, foreign_key: true
 
       t.timestamps
     end

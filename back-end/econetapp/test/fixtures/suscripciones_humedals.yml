@@ -1,13 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  observaciones: 
-  estado: 
-  humedal: one
   usuario: one
+  humedal: one
 
 two:
-  observaciones: 
-  estado: 
-  humedal: two
   usuario: two
+  humedal: two

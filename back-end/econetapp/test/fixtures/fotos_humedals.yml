@@ -2,8 +2,10 @@
 
 one:
   url_imagen: 
-  id_humedal: 
+  esPrincipal: 
+  humedal: one
 
 two:
   url_imagen: 
-  id_humedal: 
+  esPrincipal: 
+  humedal: two

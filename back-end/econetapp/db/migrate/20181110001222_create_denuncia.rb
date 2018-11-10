@@ -3,8 +3,8 @@ class CreateDenuncia < ActiveRecord::Migration[5.2]
     create_table :denuncia do |t|
       t.String :observaciones
       t.String :estado
-      t.Integer :id_humedal
-      t.Integer :id_usuario
+      t.references :humedal, foreign_key: true
+      t.references :usuario, foreign_key: true
 
       t.timestamps
     end
