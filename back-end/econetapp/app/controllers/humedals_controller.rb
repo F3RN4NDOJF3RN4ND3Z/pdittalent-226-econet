@@ -1,0 +1,2 @@
+class HumedalsController < ApplicationController
+end
