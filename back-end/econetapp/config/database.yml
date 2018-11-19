@@ -16,17 +16,17 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode 
+  encoding: unicode
+  username: postgres
+  password: 80845639
+  host: localhost
+  port: 5432 
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  username: postgres
-  password: admin
-  host: localhost
-  port: 5432
   database: econetapp_development
 
   # The specified database role being used to connect to postgres.

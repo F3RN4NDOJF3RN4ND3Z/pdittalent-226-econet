@@ -1,0 +1,2 @@
+class FotosHumedalsController < ApplicationController
+end

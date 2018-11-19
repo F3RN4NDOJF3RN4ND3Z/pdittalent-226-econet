@@ -1,4 +1,4 @@
 class Denuncia < ApplicationRecord
-  belongs_to :humedal
-  belongs_to :usuario
+  has_and_belongs_to_many :humedals, required: true
+  has_and_belongs_to_many :usuarios, required: true
 end

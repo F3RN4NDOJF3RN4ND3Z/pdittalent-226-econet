@@ -1,4 +1,4 @@
 class Evento < ApplicationRecord
-  belongs_to :contacto
-  belongs_to :humedal
+  has_many_and_belongs_to :contactos
+  has_many_and_belongs_to :humedals
 end
