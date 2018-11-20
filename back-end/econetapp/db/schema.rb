@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2018_11_10_002810) do
 
   create_table "eventos", force: :cascade do |t|
     t.text "descripcion"
-    t.integer "id_humedal"
     t.string "url_imagen"
     t.string "organizador"
     t.string "horario"

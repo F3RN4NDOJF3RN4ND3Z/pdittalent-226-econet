@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resources :contactos
     resources :humedals
   end
+  resources :fotos_humedals
+  resources :suscripciones_humedals
 end
