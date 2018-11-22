@@ -1,12 +1,51 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      ECO-NET
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
-</ion-content>
+    <ion-tabs>
+        <ion-tab tab="noticias">
+          <ion-router-outlet name="noticias"></ion-router-outlet>
+        </ion-tab>
+        <ion-tab tab="humedales">
+            <ion-router-outlet name="humedales"></ion-router-outlet>
+        </ion-tab>
+        <ion-tab tab="notificaciones">
+            <ion-router-outlet name="notificaciones"></ion-router-outlet>
+        </ion-tab>
+        <ion-tab tab="denuncias">
+            <ion-router-outlet name="denuncias"></ion-router-outlet>
+        </ion-tab>
+        <ion-tab tab="noticias">
+          <ion-router-outlet name="noticias"></ion-router-outlet>
+      </ion-tab>
+        
+      
+        <ion-tab-bar slot="bottom">
+      
+          <ion-tab-button tab="noticias" href="/tabs/(noticias:noticias)">
+            <ion-label>Home</ion-label>
+            <ion-icon name="home"></ion-icon>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="notificaciones" href="/tabs/(notificaciones:notificaciones)">
+            <ion-label>Notificaciones</ion-label>
+            <ion-icon name="notifications"></ion-icon>
+          </ion-tab-button>
+
+          <ion-tab-button tab="humedales" href ="/tabs/(humedales:humedales)">
+              <ion-label>Humedales</ion-label>
+              <ion-icon name="water"></ion-icon>
+          </ion-tab-button>
+          <ion-tab-button tab="denuncias" href="/tabs/(denuncias:denuncias)">
+              <ion-label>Denuncias</ion-label>
+              <ion-icon name="megaphone"></ion-icon>
+          </ion-tab-button>
+      
+        </ion-tab-bar>
+      </ion-tabs> 
+ </ion-content>

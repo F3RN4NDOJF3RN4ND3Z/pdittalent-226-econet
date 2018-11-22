@@ -1,0 +1,15 @@
+<ion-content padding center text-center>
+    <ion-title>Registration</ion-title>
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="e-mail" [(ngModel)]="username"></ion-input>
+        
+      </ion-item>
+      <ion-item>
+          <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+          
+        </ion-item>
+    </ion-list>
+    <ion-button size="full"  (click)="registerActionFacebook()" >Register</ion-button>
+      
+  </ion-content>
