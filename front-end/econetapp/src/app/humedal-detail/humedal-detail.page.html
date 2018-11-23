@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>humedal_detail</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
+  <ion-tabs>
+    <ion-tab tab="principal">
+      <ion-router-outlet name="principal"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab tab="fotos">
+        <ion-router-outlet name="fotos"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab tab="noticias">
+        <ion-router-outlet name="noticias"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab tab="denuncias">
+        <ion-router-outlet name="denuncias"></ion-router-outlet>
+    </ion-tab>
+    
+  
+    <ion-tab-bar slot="top">
+  
+      <ion-tab-button tab="principal" href="/tabs/humedales/(princial:princial)" fill="outline">
+        <ion-label>Principal</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="fotos" href="/tabs/humedales/(fotos:fotos)" fill="outline">
+        <ion-label>Fotos</ion-label>
+      </ion-tab-button>
 
+      <ion-tab-button tab="noticias" href ="/tabs/humedales/(noticas:noticias)" fill="outline">
+          <ion-label>Humedales</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="denuncias" href="/tabs/humedales/(denuncias:denuncias)" fill="outline">
+          <ion-label>Denuncias</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs> 
 </ion-content>
