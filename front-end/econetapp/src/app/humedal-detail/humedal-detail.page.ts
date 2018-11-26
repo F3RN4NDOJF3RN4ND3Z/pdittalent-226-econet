@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HumedalService } from '../services/humedal.service';
 
 @Component({
   selector: 'app-humedal-detail',
@@ -10,6 +11,7 @@ export class HumedalDetailPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }

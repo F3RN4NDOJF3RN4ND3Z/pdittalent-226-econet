@@ -1,3 +1,10 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="humedales"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 <ion-content padding>
   <ion-tabs>
     <ion-tab tab="principal">
@@ -6,28 +13,27 @@
     <ion-tab tab="fotos">
         <ion-router-outlet name="fotos"></ion-router-outlet>
     </ion-tab>
-    <ion-tab tab="noticias">
-        <ion-router-outlet name="noticias"></ion-router-outlet>
+    <ion-tab tab="noticias_humedal">
+        <ion-router-outlet name="noticias_humedal"></ion-router-outlet>
     </ion-tab>
-    <ion-tab tab="denuncias">
-        <ion-router-outlet name="denuncias"></ion-router-outlet>
+    <ion-tab tab="denuncias_humedal">
+        <ion-router-outlet name="denuncias_humedal"></ion-router-outlet>
     </ion-tab>
     
   
-    <ion-tab-bar slot="top">
+    <ion-tab-bar slot="top" layout="icon-hide">
   
-      <ion-tab-button tab="principal" href="/tabs/humedales/(princial:princial)" fill="outline">
+      <ion-tab-button tab="principal" href="/humedal_detail/(principal:principal)" fill="outline">
         <ion-label>Principal</ion-label>
       </ion-tab-button>
   
-      <ion-tab-button tab="fotos" href="/tabs/humedales/(fotos:fotos)" fill="outline">
+      <ion-tab-button tab="fotos" href="/humedal_detail/(fotos:fotos)" fill="outline">
         <ion-label>Fotos</ion-label>
       </ion-tab-button>
-
-      <ion-tab-button tab="noticias" href ="/tabs/humedales/(noticas:noticias)" fill="outline">
-          <ion-label>Humedales</ion-label>
+      <ion-tab-button tab="noticias" href ="/humedal_detail/(noticias_humedal:noticias_humedal)" fill="outline">
+          <ion-label>Noticias</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="denuncias" href="/tabs/humedales/(denuncias:denuncias)" fill="outline">
+      <ion-tab-button tab="denuncias" href="/humedal_detail/(denuncias_humedal:denuncias_humedal)" fill="outline">
           <ion-label>Denuncias</ion-label>
       </ion-tab-button>
   

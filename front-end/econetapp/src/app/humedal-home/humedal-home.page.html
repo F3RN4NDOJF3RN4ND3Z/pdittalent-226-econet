@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>humedal_home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-
+  <h1>Nombre:{{humedal.humedal.humedal.nombre}}</h1>
+  <div id='map' style='height: 300px;'></div>
+  <div id="contacto">
+    <ion-icon name="contact"></ion-icon>
+    <ion-label>
+      <h3>Nombre:{{humedal.humedal.contacto.nombre}}</h3>
+      <h3>Telefono:{{humedal.humedal.contacto.telefono}}</h3>
+      <h3>e-Mail:{{humedal.humedal.contacto.email}}</h3>
+    </ion-label>
+    <ion-icon name="water"></ion-icon>
+    <ion-label>
+      <h3>Horario Atencion:{{humedal.humedal.humedal.horario_atencion}}</h3>
+      <br>
+      <h3>Descripcion:</h3>
+      <p>{{humedal.humedal.humedal.descripcion}}</p>
+    </ion-label>
+  </div>
 </ion-content>

@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>humedal_fotos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content padding>
-
+    <ion-grid>
+      <ion-row>
+      <ion-col size="6" *ngFor="let photo of photos">
+          <img src="{{photo.url_imagen}}" imageViewer/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>    
 </ion-content>

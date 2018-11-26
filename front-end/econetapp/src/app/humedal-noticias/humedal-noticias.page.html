@@ -1,0 +1,12 @@
+<ion-content padding>
+  <ion-card *ngFor="let noticia of noticias">
+    <ion-img src="{{noticia.url_imagen}}"></ion-img>
+    <ion-card-header>
+        {{noticia.descripcion}}
+    </ion-card-header>
+    <ion-card-content>
+        <h2>Organizador:{{noticia.organizador}}</h2>
+        <h2>Fecha y Lugar:{{noticia.horario}}</h2>
+    </ion-card-content>
+</ion-card>
+</ion-content>

@@ -1,3 +1,7 @@
 <ion-content padding>
-<p>Humedales</p>
+<h1>Humedales</h1>
+<div *ngFor="let h of humedales">
+    <img src="{{h[0].foto_principal[0].url_imagen}}" alt="" (click)="humedalDetail(h)">
+    <h1>{{h[0].humedal.nombre}}</h1>
+</div>
 </ion-content>

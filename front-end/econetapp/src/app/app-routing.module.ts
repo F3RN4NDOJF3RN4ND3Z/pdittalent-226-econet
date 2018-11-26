@@ -16,6 +16,10 @@ import { HumedalHomePage } from './humedal-home/humedal-home.page';
 import { HumedalFotosPage } from './humedal-fotos/humedal-fotos.page';
 import { HumedalHomePageModule } from './humedal-home/humedal-home.module';
 import { HumedalFotosPageModule } from './humedal-fotos/humedal-fotos.module';
+import { HumedalDenunciasPage } from './humedal-denuncias/humedal-denuncias.page';
+import { HumedalNoticiasPage } from './humedal-noticias/humedal-noticias.page';
+import { HumedalDenunciasPageModule } from './humedal-denuncias/humedal-denuncias.module';
+import { HumedalNoticiasPageModule } from './humedal-noticias/humedal-noticias.module';
 
 const routes: Routes = [
 { path: 'tabs', 
@@ -67,24 +71,45 @@ const routes: Routes = [
       component: HumedalFotosPage
     },
     {
-      path: 'denuncias',
-      outlet:'denuncias',
-      component: DenunciasPage
+      path: 'denuncias_humedal',
+      outlet:'denuncias_humedal',
+      component: HumedalDenunciasPage
     },
     {
-      path: 'noticias',
-      outlet: 'noticias',
-      component: NoticiasPage
+      path: 'noticias_humedal',
+      outlet: 'noticias_humedal',
+      component: HumedalNoticiasPage
     }
-  ]
-},
-{ path: 'humedales', loadChildren: './humedales/humedales.module#HumedalesPageModule' },
+  ]},
+  {
+    path: 'humedal',
+    pathMatch: 'full',
+    redirectTo: '/humedal_detail/(principal:principal)'
+  },
+  {
+    path: 'humedales',
+    pathMatch: 'full',
+    redirectTo: '/tabs/(humedales:humedales)'
+  },
+//{ path: 'humedales', loadChildren: './humedales/humedales.module#HumedalesPageModule' },
 { path: 'registration', loadChildren: './registration/registration.module#RegistrationPageModule' },
 { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),HomePageModule,HumedalDetailPageModule,HumedalesPageModule,NoticiasPageModule,NotificacionesPageModule,DenunciasPageModule,HumedalHomePageModule,HumedalFotosPageModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    HomePageModule,
+    HumedalDetailPageModule,
+    HumedalesPageModule,
+    NoticiasPageModule,
+    NotificacionesPageModule,
+    DenunciasPageModule,
+    HumedalHomePageModule,
+    HumedalFotosPageModule,
+    HumedalDenunciasPageModule,
+    HumedalNoticiasPageModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
