@@ -1,3 +1,30 @@
 <ion-content padding>
-  <p>Denuncia</p>
+  
+  <h1>Denuncia</h1>
+  <ion-list>
+    <ion-item>
+        <ion-label>Humedal:</ion-label>
+        <ion-select [(ngModel)]="denuncia.humedalId" placeholder="Seleccione ...">
+            <ion-select-option *ngFor="let humedal of humedales" value="{{humedal[0].humedal.id}}">{{humedal[0].humedal.nombre}}</ion-select-option>
+        </ion-select>
+        
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">OBSERVACIONES</ion-label>
+        <ion-textarea [(ngModel)]="denuncia.observaciones"></ion-textarea>
+    </ion-item>
+   <ion-item>
+    <ion-label >Archivos:
+      <input type="file" id="upimgfile" name="uploadfile" [(ngModel)]="denuncia.data" multpile>
+    </ion-label>
+   </ion-item>
+   <ion-item>
+      
+      <label class="custom-file-upload">
+
+          <input type="file"/>
+          <ion-icon name="cloud-upload"></ion-icon>Seleccionar Archivos
+      </label>
+   </ion-item>
+  </ion-list>
 </ion-content>
