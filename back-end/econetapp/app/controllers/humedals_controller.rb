@@ -11,12 +11,25 @@ class HumedalsController < ApplicationController
 
     def show
         @humedal=Humedal.find(params[:id])
-        render :json => @humedal.to_json
+        render :json => {:humedal => @humedal}
     end
 
     def index
-        @humedales=Humedal.all
-        render :json => @humedales.to_json
+        #@humedales=Humedal.all
+        @humedales=[]
+        Humedal.joins(:fotos_humedals,:contacto).find_each do |humedal|
+            hash={}
+            @fotos=[]
+            @fotos=humedal.fotos_humedals()
+            @foto_princial=@fotos.select{|foto| foto.esPrincipal?}
+            @contacto=humedal.contacto()
+            @denuncias=humedal.denuncias()
+            @eventos=humedal.eventos()
+            hash=["humedal"=>humedal,"fotos"=>@fotos,"foto_principal"=>@foto_princial,"contacto"=>@contacto,"denuncias"=>@denuncias,"eventos"=>@eventos]
+            @humedales << hash
+        end
+
+        render :json => {:humedales=> @humedales}
     end
 
     private

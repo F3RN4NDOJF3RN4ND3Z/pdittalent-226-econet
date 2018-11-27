@@ -10,12 +10,20 @@ class SuscripcionesHumedalsController < ApplicationController
 
     def show
         @suscripcion=SuscripcionesHumedal.find(params[:id])
-        render :json => @suscripcion.to_json
+        render :json => {:suscripcion=>@suscripcion}
     end
 
     def index
-        @suscripciones=SuscripcionesHumedal.all
-        render :json => @suscripciones.to_json
+        if params[:humedal_id].present?
+            @suscripciones=SuscripcionesHumedal.where(humedal_id: params[:humedal_id])
+        elsif params[:usuario_id].present?
+            @suscripciones=SuscripcionesHumedal.where(usuario_id: params[:usuario_id])
+        else
+            @suscripciones=SuscripcionesHumedal.all
+        end
+
+        
+        render :json => {:suscripciones => @suscripciones}
     end
 
     private

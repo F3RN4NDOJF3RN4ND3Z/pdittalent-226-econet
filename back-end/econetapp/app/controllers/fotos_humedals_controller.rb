@@ -10,12 +10,17 @@ class FotosHumedalsController < ApplicationController
 
     def show
         @foto=FotosHumedal.find(params[:id])
-        render :json => @foto.to_json
+        render :json =>{:foto => @foto}
     end
 
     def index
-        @fotos=FotosHumedal.all
-        render :json => @fotos.to_json
+        if  params[:humedal_id].present?
+            @fotos=FotosHumedal.where(humedal_id: params[:humedal_id])
+        else
+            @fotos=FotosHumedal.all
+        end
+        
+        render :json => {:fotos => @fotos}
     end
 
     private 

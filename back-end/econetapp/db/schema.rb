@@ -26,12 +26,12 @@ ActiveRecord::Schema.define(version: 2018_11_10_002810) do
   create_table "denuncia", force: :cascade do |t|
     t.string "observaciones"
     t.string "estado"
-    t.bigint "humedals_id"
-    t.bigint "usuarios_id"
+    t.bigint "humedal_id"
+    t.bigint "usuario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["humedals_id"], name: "index_denuncia_on_humedals_id"
-    t.index ["usuarios_id"], name: "index_denuncia_on_usuarios_id"
+    t.index ["humedal_id"], name: "index_denuncia_on_humedal_id"
+    t.index ["usuario_id"], name: "index_denuncia_on_usuario_id"
   end
 
   create_table "eventos", force: :cascade do |t|
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2018_11_10_002810) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "denuncia", "humedals", column: "humedals_id"
-  add_foreign_key "denuncia", "usuarios", column: "usuarios_id"
+  add_foreign_key "denuncia", "humedals"
+  add_foreign_key "denuncia", "usuarios"
   add_foreign_key "eventos", "contactos"
   add_foreign_key "eventos", "humedals"
   add_foreign_key "fotos_humedals", "humedals"

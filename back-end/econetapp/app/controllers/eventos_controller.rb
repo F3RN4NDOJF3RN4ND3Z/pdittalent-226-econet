@@ -10,12 +10,17 @@ class EventosController < ApplicationController
 
     def show
         @evento=Evento.find(params[:id])
-        render :json => @evento.to_json
+        render :json => {:evento => @evento}
     end
 
     def index
-        @eventos=Evento.all
-        render :json => @eventos.to_json
+        if params[:humedal_id].present?
+            @eventos=Evento.where(humedal_id: params[:humedal_id])
+        else
+            @eventos=Evento.all
+        end
+        
+        render :json => {:eventos => @eventos}
     end
 
     private

@@ -10,12 +10,15 @@ class ContactosController < ApplicationController
 
     def show
         @contacto=Contacto.find(params[:id])
-        render :json => @contacto.to_json
+        render :json => {:contacto => @contacto}
     end
 
     def index
+
         @contactos=Contacto.all
-        render :json => @contactos.to_json
+
+        
+        render :json => {:contactos => @contactos}
     end
 
     private

@@ -10,12 +10,23 @@ class DenunciasController < ApplicationController
 
     def show
         @denuncia=Denuncia.find(params[:id])
-        render :json=>@denuncia.to_json
+        render :json=>{:denuncia=>@denuncia}
     end
     
     def index
-        @denuncias=Denuncia.all
-        render :json=>@denuncias.to_json
+        if params[:humedals_id].present?
+            @denuncias=Denuncia.where(humedals_id: params[:humedals_id])
+        else
+            #@denuncias=Denuncia.all
+            Denuncia.joins(:usuario).find_each do |denuncia|
+            hash={}
+            @usuario=denuncia.usuario()
+            hash=["denuncia"=>denuncia,"usuario"=>@usuario]
+            @denuncias << hash
+
+        end
+        
+        render :json=> {:denuncias=>@denuncias}
     end
 
     private

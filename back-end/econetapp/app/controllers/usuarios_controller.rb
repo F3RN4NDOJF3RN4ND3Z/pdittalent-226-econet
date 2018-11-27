@@ -10,12 +10,12 @@ class UsuariosController < ApplicationController
 
     def show
         @usuario=Usuario.find(params[:id])
-        render :json => @usuario.to_json
+        render :json => {:usuario => @usuario}
     end
 
     def index
         @usuarios=Usuario.all
-        render :json => @usuarios.to_json
+        render :json => {:usuarios => @usuarios}
     end
 
     private
