@@ -2,7 +2,11 @@
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button defaultHref="humedales"></ion-back-button>
+        <ion-button (click)=subscribeTo()>
+          <ion-icon slot="icon-only" [name]="subscribed ? 'notifications' : 'notifications-off'"></ion-icon>
+        </ion-button>
       </ion-buttons>
+      
     </ion-toolbar>
   </ion-header>
 <ion-content padding>
@@ -30,10 +34,10 @@
       <ion-tab-button tab="fotos" href="/humedal_detail/(fotos:fotos)" fill="outline">
         <ion-label>Fotos</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="noticias" href ="/humedal_detail/(noticias_humedal:noticias_humedal)" fill="outline">
+      <ion-tab-button tab="noticias_humedal" href ="/humedal_detail/(noticias_humedal:noticias_humedal)" fill="outline">
           <ion-label>Noticias</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="denuncias" href="/humedal_detail/(denuncias_humedal:denuncias_humedal)" fill="outline">
+      <ion-tab-button tab="denuncias_humedal" href="/humedal_detail/(denuncias_humedal:denuncias_humedal)" fill="outline">
           <ion-label>Denuncias</ion-label>
       </ion-tab-button>
   
