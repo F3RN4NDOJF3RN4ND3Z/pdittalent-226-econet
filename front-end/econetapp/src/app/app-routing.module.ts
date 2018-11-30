@@ -48,13 +48,9 @@ const routes: Routes = [
   ]
 },
 {
-  path:'',
-  redirectTo: 'home',
-  pathMatch: 'full'
-},
-{
-  path:'home',
+  path: 'home',
   redirectTo: '/tabs/(noticias:noticias)',
+  pathMatch: 'full'
 },
 { 
   path: 'humedal_detail', 
@@ -93,7 +89,7 @@ const routes: Routes = [
   },
 //{ path: 'humedales', loadChildren: './humedales/humedales.module#HumedalesPageModule' },
 { path: 'registration', loadChildren: './registration/registration.module#RegistrationPageModule' },
-{ path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+{ path: '', loadChildren: './login/login.module#LoginPageModule' }
 ];
 
 @NgModule({

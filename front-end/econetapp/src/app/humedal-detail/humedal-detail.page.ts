@@ -8,24 +8,32 @@ import { SubscriptionsService } from '../services/subscriptions.service';
   styleUrls: ['./humedal-detail.page.scss'],
 })
 export class HumedalDetailPage implements OnInit {
-  subscribed:boolean=false;
+  subscribed:boolean;
   constructor(public subscriptionsService:SubscriptionsService,public humedal:HumedalService) { }
 
   ngOnInit() {
   
+   this.subscribed=false;
    let subscriptions:any[]=this.subscriptionsService.consultarSubscripciones();
-   console.log(subscriptions);
-   console.log(this.humedal.humedal);
-   if (subscriptions.includes(this.humedal.humedal)){
-     this.subscribed=true;
-   }
+   subscriptions.forEach(element => {
+     if(element.humedal.id===this.humedal.humedal.humedal.id){
+       this.subscribed=true;
+       return;
+     }
+   });
 
 
   }
 
   subscribeTo(){
-    this.subscribed=true;
-    this.subscriptionsService.guadarSubscripcion(this.humedal.humedal);
+    if(this.subscribed){
+      this.subscribed=false;
+      this.subscriptionsService.borrarSubscripcion(this.humedal.humedal);  
+    }else{
+      this.subscribed=true;
+      this.subscriptionsService.guadarSubscripcion(this.humedal.humedal);
+    }
+    
   }
 
 }

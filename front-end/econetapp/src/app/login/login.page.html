@@ -2,14 +2,16 @@
   <ion-title>ECO-NET</ion-title>
   <ion-list>
     <ion-item>
-      <ion-input placeholder="e-mail" [(ngModel)]="username"></ion-input>
+      <ion-input placeholder="e-mail" [(ngModel)]="username" type="email"></ion-input>
       
     </ion-item>
     <ion-item>
         <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
         
       </ion-item>
-  </ion-list>
+  </ion-list>  
+
+  
   <ion-button size="full" (click)="login()">Log In</ion-button>
   <ion-button size="full"  (click)="loginFacebook()" icon-right>
       LogIn Facebook 

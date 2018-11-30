@@ -1,4 +1,12 @@
 <ion-content padding>
-  <p>Notificiones</p>
+  <ion-list>
+    <ion-item *ngFor="let notificacion of notificaciones">
+      <ion-label>
+        <h2>{{notificacion.title}}</h2>
+        <h3>I'm a big deal</h3>
+        <p>{{notificacion.title}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

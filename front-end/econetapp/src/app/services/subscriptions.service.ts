@@ -38,4 +38,16 @@ export class SubscriptionsService {
   	localStorage.setItem("subscriptions",  JSON.stringify(this.subscriptions));
 
   }
+
+  borrarSubscripcion(elem){
+  	for (var i =0; i < this.subscriptions.length; i++){
+      if (this.subscriptions[i].humedal.id === elem.humedal.id) {
+          this.subscriptions.splice(i,1);
+          break;
+      }
+    }
+    
+  	localStorage.setItem("subscriptions",  JSON.stringify(this.subscriptions));
+
+  }
 }
