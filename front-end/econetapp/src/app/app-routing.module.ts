@@ -20,6 +20,9 @@ import { HumedalDenunciasPage } from './humedal-denuncias/humedal-denuncias.page
 import { HumedalNoticiasPage } from './humedal-noticias/humedal-noticias.page';
 import { HumedalDenunciasPageModule } from './humedal-denuncias/humedal-denuncias.module';
 import { HumedalNoticiasPageModule } from './humedal-noticias/humedal-noticias.module';
+import { LoginPage } from './login/login.page';
+import { LoginPageModule } from './login/login.module';
+import { AuthguardService } from './services/authguard.service';
 
 const routes: Routes = [
 { path: 'tabs', 
@@ -46,11 +49,14 @@ const routes: Routes = [
       component: DenunciasPage
     }
   ]
+  ,
+  canActivate : [AuthguardService]
 },
 {
   path: 'home',
   redirectTo: '/tabs/(noticias:noticias)',
-  pathMatch: 'full'
+  pathMatch: 'full',
+  canActivate : [AuthguardService]
 },
 { 
   path: 'humedal_detail', 
@@ -76,20 +82,27 @@ const routes: Routes = [
       outlet: 'noticias_humedal',
       component: HumedalNoticiasPage
     }
-  ]},
+  ],
+  canActivate : [AuthguardService]
+  },
   {
     path: 'humedal',
     pathMatch: 'full',
-    redirectTo: '/humedal_detail/(principal:principal)'
+    redirectTo: '/humedal_detail/(principal:principal)',
+    canActivate : [AuthguardService]
   },
   {
     path: 'humedales',
     pathMatch: 'full',
-    redirectTo: '/tabs/(humedales:humedales)'
+    redirectTo: '/tabs/(humedales:humedales)',
+    canActivate : [AuthguardService]
   },
 //{ path: 'humedales', loadChildren: './humedales/humedales.module#HumedalesPageModule' },
 { path: 'registration', loadChildren: './registration/registration.module#RegistrationPageModule' },
-{ path: '', loadChildren: './login/login.module#LoginPageModule' }
+{ path: 'login', 
+  component: LoginPage
+}
+
 ];
 
 @NgModule({
@@ -104,7 +117,8 @@ const routes: Routes = [
     HumedalHomePageModule,
     HumedalFotosPageModule,
     HumedalDenunciasPageModule,
-    HumedalNoticiasPageModule
+    HumedalNoticiasPageModule,
+    LoginPageModule
   ],
   exports: [RouterModule]
 })
